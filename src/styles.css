@@ -1,1 +1,103 @@
 /* You can add global styles to this file, and also import other style files */
+  .header{
+      margin-top: 2px;
+      background-color: whitesmoke;
+      text-align: center;
+      padding: 20px;
+  }
+  .topnav{
+      margin-top: 5px;
+      overflow: hidden;
+      background-color:orange;
+    }
+    .topnav a{
+      float: right;
+      display: block;
+      color: royalblue;
+      text-align: left;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .topnav a:hover{
+      background-color:blue;
+      color:black;
+    }
+    .topnav a:link{
+      background-color:white;
+      color:blue;
+    }
+    .topnav a:active{
+      background-color:grey;
+      color: blue;
+    }
+    .sidenav {
+      margin-top: 5px;
+      background-color: white;
+      color:  black;
+      float: left;
+      width: 32.76%;
+      box-sizing: content-box;
+      margin-left: 3px;
+      height: 360px;
+    }
+    h2 {
+      text-align: center;
+      color: black;
+    }
+    .row:after{
+      content: "";
+      display: table;
+      clear: both;
+    }
+    p{
+     text-align: center;
+    }
+    
+    .footer{
+      margin-top: 5px;
+      background-color: #F1F1F1;
+      text-align: center;
+      padding: 20px;
+    }
+    body{
+    background-color: white;
+    }
+    input:invalid:required{
+    background-image: linear-gradient(to right,pink,lightgreen);
+    }
+body{
+    background-image:url('/assets/images/bg.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h3{
+    margin-top: .1cm;
+    text-align: center;
+    color: green;
+    background-color: lightyellow;
+}
+.form{
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+    background-color: lavender;
+    border: 1px solid black;
+    margin-top: .1cm;
+}
+input[type=text],input[type=date],select {
+  width : 100%;
+  height:20px;
+}
+button{
+  width:25%;
+  border:none;
+  color:white;
+  padding:10px;
+  text-align:center;
+  text-decoration:none;
+  display:inline-block;
+  font-size:12px;
+  margin:2px 1px;
+  cursor :pointer;
+  border-radius:8px;
+}

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "SampleFlight"
+    }
+  },
+  "defaultProject": "SampleFlight",
+  "cli": {
+    "analytics": "18c1db7e-23f1-431d-92f2-db79018b74c1"
+  }
 }

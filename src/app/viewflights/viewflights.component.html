@@ -1,0 +1,30 @@
+<header class="header">
+    <img [src]="logo" width=60 height=60 align="left" style = "padding-left: 30px;">
+    <h1>King Flyer AirLines</h1><h5 align="left">The Royal Bird with Golden Wings</h5>
+</header>
+
+<h2>List of Available Flights</h2>
+
+<table align = "center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Departure Date(YYYY-MM-DD)</th>
+            <th>Arrival Date(YYYY-MM-DD)</th>
+            <th>Departure Location</th>
+            <th>Arrival Location</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let flight of flights'>
+            <td>{{ flight.id }}</td>
+            <td>{{ flight.departureDate }}</td>
+            <td>{{ flight.arrivalDate }}</td>
+            <td>{{ flight.departureLocation }}</td>
+            <td>{{ flight.arrivalLocation }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<a [routerLink] = '"/dashboard"' style = "color : firebrick; text-decoration: none;font-size : 25px"><b><< Home</b></a>
+<a [routerLink] = '"/bookflight"' style = "float : right; color : firebrick; text-decoration: none;font-size : 25px"><b>Book Ticket >></b></a>

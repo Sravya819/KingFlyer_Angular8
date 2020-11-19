@@ -1,0 +1,41 @@
+<header class="header">
+    <img [src]="logo" width=60 height=60 align="left" style="padding-left:30px">
+    
+    <h1>King Flyer AirLines</h1><h5 align="left">The Royal Bird with Golden Wings</h5></header>
+<h3>New User? Register Here</h3>
+<div class="form">
+ <form #addForm='ngForm' (ngSubmit)='addUser()'>
+ <div class="form-group">
+    <h4 align = "center" style = "color:red">Enter Details Carefully</h4>
+    <label for="userName">User Name</label>
+    <input type="text" name="userName" id="userName" [(ngModel)]='newuser.userName' #userName=ngModel required minlength="6"  class="form-control" placeholder="Enter user name" aria-describedby="helpId" >
+    <div style="color: red;" *ngIf="userName.invalid && (userName.dirty || userName.touched)">
+       *Minimum length should be 6!! 
+     </div>
+     <h4></h4>
+     <label for="firstName">First Name</label>
+ <input type="text" name="firstName" id="firstName" [(ngModel)]='newuser.firstName' #firstName="ngModel" required minlength="5" class="form-control" placeholder="Enter first name" aria-describedby="helpId" > 
+ <div style="color: red;" *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)">
+     *Minimum length should be 5!! 
+     </div>
+     <h4></h4>
+     <label for="lastName">Last Name</label>
+ <input type="text" name="lastName" id="lastName" [(ngModel)]='newuser.lastName' #lastName="ngModel" required minlength="4" class="form-control" placeholder="Enter last name" aria-describedby="helpId" > 
+ <div style="color: red;" *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+     *Minimum length should be 4!! 
+     </div>
+     <h4></h4>
+     <label for="password">Password</label>
+     <br />
+  <input type="password" name="password" id="password" [(ngModel)]='newuser.password' #password="ngModel" required minlength="6" class="form-control" placeholder="Set a password" aria-describedby="helpId" >
+  <div style="color: red" *ngIf="password.invalid && (password.dirty || password.touched)">
+     *Minimum length should be 6!! 
+     </div>
+     <h4></h4>
+     <!-- <a routerLink ="/contact" class="nav-link" routerLinkActive ="active" [disabled]='addForm.invalid'>Next</a> -->
+     <button type="submit" [disabled]='addForm.invalid' class="btn btn-primary" style = "background-color: dodgerblue;">Register</button>
+     <!--<button type="button" class="btn btn-primary-outline pull-right" [disabled]='addForm.invalid' (click)="btnClick;">Next</button> -->
+  </div>
+ </form>
+</div>
+<a [routerLink] = '"/dashboard"' style = "color : firebrick; text-decoration: none;font-size : 25px"><b><< Home</b></a>

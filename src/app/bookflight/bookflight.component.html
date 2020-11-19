@@ -1,0 +1,61 @@
+<header class="header">
+    <img [src]="logo" width=60 height=60 align="left" style = "padding-left: 30px">
+    <h1>King Flyer AirLines</h1>
+    <h5 align="left">The Royal Bird with Golden Wings</h5>
+</header>
+
+<script href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"></script>
+
+<div class = "form">
+    <h1 align = "center">Ticket Booking Form</h1>
+    <form #addForm='ngForm' (ngSubmit)='addBooking()'>
+        <div class = "form-group">
+    
+            <label>Travel Date:</label>
+            <input type="date" name="travelDate" id="travelDate" [(ngModel)]='newbooking.travelDate' #travelDate="ngModel" required max="2020-11-20" min="2020-11-19" class="form-control" placeholder= "dd-mm-yyyy" aria-describedby="helpId">
+  
+            <p></p>
+
+            <div class = "form-group">
+                <label>From:</label>
+                <select style = "height:20px"class="form-control" id='departureLocation' name='departureLocation' [(ngModel)]='newbooking.departureLocation' #departureLocation="ngModel" required>
+                    <option *ngFor='let departureLocation of departureLocations' [value]="departureLocation">{{departureLocation}}</option>
+                </select>
+            </div>
+            <p></p>
+
+            <div class = "form-group">
+                <label>To:</label>
+                <select style = "height:20px"class="form-control" id='arrivalLocation' name='arrivalLocation' [(ngModel)]='newbooking.arrivalLocation' #arrivalLocation="ngModel" required>
+                    <option *ngFor='let arrivalLocation of arrivalLocations' [value]="arrivalLocation">{{arrivalLocation}}</option>
+                </select>
+            </div>
+            <p></p>
+
+            <label>Passenger Name:</label>
+            <input type="text" name="passengerName" id="passengerName" [(ngModel)]='newbooking.passengerName' #passengerName="ngModel" required minlength = "4" class="form-control" placeholder="Enter Passenger Name" aria-describedby="helpId"  required>
+            <div style="color: red;" *ngIf="passengerName.invalid && (passengerName.dirty || passengerName.touched)">*Required field!!!</div>   
+            <p></p>
+
+            <div class = "form-group">
+                <label>Gender:</label>
+                <select style = "height:20px"class="form-control" id='gender' name='gender' [(ngModel)]='newbooking.gender' #gender="ngModel" required>
+                    <option *ngFor='let gender of genders' [value]="gender">{{gender}}</option>
+                </select>
+            </div>
+            <p></p>
+
+            <div class = "form-group">
+                <label>Class:</label>
+                <select style = "height:20px"class="form-control" id='classType' name='classType' [(ngModel)]='newbooking.classType' #classType="ngModel" required>
+                    <option *ngFor='let classType of classTypes' [value]="classType">{{classType}}</option>
+                </select>
+            </div>
+            <p></p>
+
+            <button type="submit" [disabled]='addForm.invalid' class="btn btn-primary" style = "background-color:green">Submit</button>
+            <button type="submit" class = "btn btn-primary" routerLink = "/dashboard" style = "float : right;background-color: red;">Cancel</button>
+        </div>
+    </form>
+</div>
+<a [routerLink] = '"/dashboard"' style = "color : firebrick; text-decoration: none;font-size : 25px"><b><< Home</b></a>
